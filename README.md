@@ -10,6 +10,8 @@
 
 生成目标是让维护者或读者可以直接打开 `public/index.html` 查看网站；不应依赖 `hugo serve` 才能浏览。为此，Hugo配置启用了相对链接和 `.html` 文件式链接。
 
+为了同时兼容 `hugo serve` 和直接打开 `public/index.html`，本仓库在 `layouts/partials/docs/html-head.html` 覆盖了Hugo Book的页面头部模板。这个覆盖只调整样式和脚本的引用方式，去掉会影响 `file://` 本地打开的完整性校验和跨域属性；主题布局本身仍然使用Hugo Book。
+
 为了保证 `file://` 方式打开时稳定，站内搜索功能已关闭；搜索脚本在部分浏览器中需要本地服务器才可运行。
 
 ## 内容目录
