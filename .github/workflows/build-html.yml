@@ -1,0 +1,63 @@
+name: Build Hugo HTML
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.md"
+      - "archetypes/**"
+      - "assets/**"
+      - "content/**"
+      - "data/**"
+      - "i18n/**"
+      - "layouts/**"
+      - "static/**"
+      - "themes/**"
+      - ".gitmodules"
+      - "hugo.yaml"
+      - ".github/workflows/build-html.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-hugo-html-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.163.3"
+          extended: true
+
+      - name: Build HTML
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --gc --minify --cleanDestinationDir --noTimes --noChmod --destination public
+
+      - name: Commit generated HTML
+        run: |
+          if [ -n "$(git status --porcelain -- public)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public
+            git commit -m "Build Hugo HTML [skip ci]"
+            git push
+          else
+            echo "No generated HTML changes."
+          fi

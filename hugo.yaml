@@ -1,0 +1,41 @@
+baseURL: "https://example.org/"
+title: "StatFunGen Summer Institute NBC"
+theme: "hugo-book"
+
+publishDir: "public"
+relativeURLs: true
+canonifyURLs: false
+disablePathToLower: true
+enableGitInfo: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+    endLevel: 4
+  highlight:
+    style: github
+
+menu:
+  after:
+    - name: "GitHub"
+      url: "https://github.com/StatFunGen/summer-institute-nbc"
+      weight: 10
+    - name: "Hugo Book"
+      url: "https://themes.gohugo.io/themes/hugo-book/"
+      weight: 20
+
+params:
+  BookTheme: "light"
+  BookToC: true
+  BookSection: "docs"
+  BookRepo: "https://github.com/StatFunGen/summer-institute-nbc"
+  BookEditLink: "{{ .Site.Params.BookRepo }}/edit/main/{{ .Path }}"
+  BookLastChangeLink: "{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}"
+  BookDateFormat: "January 2, 2006"
+  BookSearch: true
+  BookComments: false
+  BookPortableLinks: "warning"
+  BookServiceWorker: false
