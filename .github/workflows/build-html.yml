@@ -51,14 +51,34 @@ jobs:
       - name: Check Hugo version
         run: hugo version
 
+      - name: Detect student workbook changes
+        id: student_workbook
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "changed=manual" >> "$GITHUB_OUTPUT"
+            echo "手动触发构建：将根据 data/course_students_urls.xlsx 生成学员入口。"
+          elif [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "首次推送或无法比较历史：将根据 data/course_students_urls.xlsx 生成学员入口。"
+          elif git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" | grep -Fxq "data/course_students_urls.xlsx"; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "检测到 data/course_students_urls.xlsx 有变化：将重新生成学员入口。"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "未检测到 data/course_students_urls.xlsx 变化；仍会在 Hugo 构建后刷新学员入口，保持 public 完整。"
+          fi
+
       - name: Build HTML
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: hugo --gc --minify --cleanDestinationDir --noTimes --noChmod --destination public
 
-      - name: Generate student server redirects
-        run: python3 scripts/generate_student_redirects.py --input data/course_students_urls.xlsx --output public
+      - name: Generate student redirects from workbook
+        run: |
+          echo "使用 data/course_students_urls.xlsx 生成学员英文上机入口。"
+          python3 scripts/generate_student_redirects.py --input data/course_students_urls.xlsx --output public
 
       - name: Commit generated HTML
         run: |

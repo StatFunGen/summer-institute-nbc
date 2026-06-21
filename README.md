@@ -25,7 +25,7 @@
 - `data/course_students_urls.xlsx`：学员上机入口数据源，包含学员、Linux文件夹和Jupyter专属链接。
 - `content/categories/`、`content/tags/`：分类和标签入口页。
 - `static/slides/`：课件文件固定存放位置。替换这里的同名文件后，Hugo会复制到 `public/slides/`。
-- `scripts/generate_student_redirects.py`：根据 `data/course_students_urls.xlsx` 生成英文入口跳转页。
+- `scripts/generate_student_redirects.py`：GitHub Actions根据 `data/course_students_urls.xlsx` 生成英文入口跳转页。
 - `layouts/`：Hugo模板覆盖，用于中文页脚、分类页和标签页。
 - `public/`：自动生成的HTML文件。
 
@@ -47,7 +47,7 @@ git push
 
 ## 上机入口维护
 
-学员上机入口由 `data/course_students_urls.xlsx` 自动生成。工作簿需要保留以下三列：
+学员上机入口由GitHub Actions根据 `data/course_students_urls.xlsx` 自动生成。工作簿需要保留以下三列：
 
 - `学员`：学员中文姓名，仅用于维护核对。
 - `Linux文件夹`：英文入口名，也是生成的HTML文件名，例如生成 `public/<Linux文件夹>.html`。
@@ -58,7 +58,8 @@ git push
 - 入口文件名来自 `Linux文件夹` 列。
 - 入口文件位于网站根目录，例如 `public/<Linux文件夹>.html`。
 - 每个入口页面会自动跳转到对应的个人上机环境。
-- 如果更新表格，只需要替换 `data/course_students_urls.xlsx` 并推送；GitHub Actions会自动重新生成入口页面。
+- 如果更新表格，只需要替换 `data/course_students_urls.xlsx` 并推送；GitHub Actions检测到该XLSX文件变化后会自动重新生成入口页面。
+- Hugo生成 `public/` 时会清理旧文件，因此自动流程会在每次HTML构建后刷新入口页面，确保普通Markdown更新后学员入口仍然存在。
 - `Linux文件夹` 只能使用英文字母、数字、点、下划线和连字符，且不能与已有页面重名。
 
 ## 本地预览
@@ -83,12 +84,12 @@ python3 scripts/generate_student_redirects.py --input data/course_students_urls.
 
 ## 自动生成流程
 
-GitHub Actions配置位于 `.github/workflows/build-html.yml`。每次推送Markdown、内容目录、模板、主题配置或工作流文件时，会自动执行以下步骤：
+GitHub Actions配置位于 `.github/workflows/build-html.yml`。每次推送Markdown、内容目录、模板、主题配置、学员入口表格或工作流文件时，会自动执行以下步骤：
 
 1. 检出仓库和Hugo Book主题子模块。
 2. 通过 `pixi global install hugo` 安装Hugo。
 3. 运行 `hugo --gc --minify --cleanDestinationDir --noTimes --noChmod --destination public` 生成HTML。
-4. 运行 `python3 scripts/generate_student_redirects.py --input data/course_students_urls.xlsx --output public` 生成学员英文上机入口。
+4. 检测 `data/course_students_urls.xlsx` 是否变化，并在Hugo构建后运行 `python3 scripts/generate_student_redirects.py --input data/course_students_urls.xlsx --output public` 生成学员英文上机入口。
 5. 如果 `public/` 有变化，自动提交 `Build Hugo HTML [skip ci]` 并推回 `main`。
 
 这个流程负责生成并提交HTML。
