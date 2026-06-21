@@ -1,16 +1,17 @@
 ---
-title: "Course Materials"
+title: "课程网站导航"
 weight: 1
 ---
 
-# Course Materials
+# 课程网站导航
 
-This section is the main home for the course website. Add Markdown files under
-`content/docs/` and Hugo Book will include them in the sidebar.
+本网站用于发布第四届大鹏湾统计功能基因组学暑期课程的课程介绍、学术日程、食宿与后勤信息，以及国家基因库现场指南。
 
-## Suggested Structure
+## 主要栏目
 
-- `content/docs/schedule.md` for the course schedule.
-- `content/docs/lectures/` for lecture notes.
-- `content/docs/practicals/` for hands-on materials.
-- `content/docs/resources.md` for links and references.
+- [课程概览](course/)：课程定位、面向人群、组织架构与授课团队。
+- [学术内容](course/academic-themes/)：课程主线、专题方向与核心方法。
+- [课程安排](schedule/)：五天课程日程、讲座主题、上机实践与答疑安排。
+- [食宿与后勤](life/)：签到、住宿、吃饭、车辆、上网、饮水与发票。
+- [国家基因库指南](ngb/)：初到国家基因库、入场与本地注意事项。
+- [网站更新流程](maintenance/)：如何更新Markdown并自动生成HTML。

@@ -1,5 +1,5 @@
 baseURL: "https://example.org/"
-title: "StatFunGen Summer Institute NBC"
+title: "第四届大鹏湾统计功能基因组学暑期课程"
 theme: "hugo-book"
 
 publishDir: "public"
@@ -7,6 +7,9 @@ relativeURLs: true
 canonifyURLs: false
 disablePathToLower: true
 enableGitInfo: true
+locale: "zh-CN"
+defaultContentLanguage: "zh"
+hasCJKLanguage: true
 
 markup:
   goldmark:
@@ -20,10 +23,10 @@ markup:
 
 menu:
   after:
-    - name: "GitHub"
+    - name: "代码仓库"
       url: "https://github.com/StatFunGen/summer-institute-nbc"
       weight: 10
-    - name: "Hugo Book"
+    - name: "主题模板"
       url: "https://themes.gohugo.io/themes/hugo-book/"
       weight: 20
 
@@ -34,7 +37,7 @@ params:
   BookRepo: "https://github.com/StatFunGen/summer-institute-nbc"
   BookEditLink: "{{ .Site.Params.BookRepo }}/edit/main/{{ .Path }}"
   BookLastChangeLink: "{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}"
-  BookDateFormat: "January 2, 2006"
+  BookDateFormat: "2006年1月2日"
   BookSearch: true
   BookComments: false
   BookPortableLinks: "warning"

@@ -1,15 +1,29 @@
 ---
-title: "StatFunGen Summer Institute NBC"
+title: "第四届大鹏湾统计功能基因组学暑期课程"
 layout: "landing"
 ---
 
-# StatFunGen Summer Institute NBC
+# 第四届大鹏湾统计功能基因组学暑期课程
 
-Course website for the StatFunGen Summer Institute NBC materials.
+## 从GWAS到多基因预测与多组学整合
 
-Use the documentation section for lectures, schedules, practicals, and notes.
+深圳国家基因库 · 大鹏湾  
+2026年6月22日至26日
 
-## Start Here
+统计功能基因组学位于统计遗传学与功能基因组学的交汇处：从GWAS信号出发，穿过QTL与调控网络，抵达疾病机制。课程围绕贝叶斯精细定位、多GWAS共定位、多组学QTL、TWAS/PWAS、跨族群PRS、反式调控、基因网络与全基因模型展开，同时讨论机器学习与AI在当前统计遗传学中的应用。
 
-- [Course Materials](docs/)
-- [About This Site](docs/about/)
+## 快速进入
+
+- [课程概览](docs/course/)
+- [学术内容](docs/course/academic-themes/)
+- [课程安排](docs/schedule/)
+- [食宿与后勤](docs/life/)
+- [国家基因库指南](docs/ngb/)
+
+## 每日基本安排
+
+- 上午讲座：8:30-12:00
+- 午餐：12:00-12:30
+- 下午讲座：12:30-15:30，可视讲师安排延长至16:00
+- 与讲师面对面答疑：15:30-16:30，讲座延长时调整为16:00-16:30
+- 上机实践：16:30-18:30，周五为结课总结与反馈收集
