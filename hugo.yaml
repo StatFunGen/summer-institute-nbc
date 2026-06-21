@@ -10,6 +10,9 @@ enableGitInfo: true
 locale: "zh-CN"
 defaultContentLanguage: "zh"
 hasCJKLanguage: true
+disableKinds:
+  - taxonomy
+  - term
 
 markup:
   goldmark:
@@ -36,7 +39,6 @@ params:
   BookSection: "docs"
   BookRepo: "https://github.com/StatFunGen/summer-institute-nbc"
   BookEditLink: "{{ .Site.Params.BookRepo }}/edit/main/{{ .Path }}"
-  BookLastChangeLink: "{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}"
   BookDateFormat: "2006年1月2日"
   BookSearch: true
   BookComments: false

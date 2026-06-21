@@ -32,4 +32,4 @@ weight: 3
 王告实验室：
 
 - 刘安京
-- Jenny Empawi
+- 珍妮·恩帕维
