@@ -14,13 +14,13 @@ tags:
 
 ## 6月22日 星期一
 
-- 董睿：课件文件一《统计遗传学的统计基础》：<a href="https://statfungen.github.io/statgen-primer/README.html">在线阅读</a>，<a href="../slides/2026-06-22-dong-rui-01-statistical-foundations.pdf">下载</a>
+- 董睿：课件文件一《统计遗传学的统计基础》：<a href="https://statfungen.github.io/statgen-primer/README.html">在线阅读</a>
 - 董睿：课件文件二《全基因组关联分析（GWAS）概览》：<a href="../slides/2026-06-22-dong-rui-02-gwas-overview.pdf">下载</a>
 
 ## 6月23日 星期二
 
 - 王告：课件文件一《全基因组关联分析（GWAS）方法论基础》：<a href="../slides/2026-06-23-wang-gao-01-gwas-methods.pdf">下载</a>
-- 王告：课件文件二《精细定位、共定位与多组数据集整合分析方法》：<a href="../slides/2026-06-23-wang-gao-02-finemapping-colocalization-multi-dataset.pdf">下载</a>
+- 王告：课件文件二《精细定位与多性状数据集整合分析方法》：<a href="../slides/2026-06-23-wang-gao-02-finemapping-multi-trait-datasets.pdf">下载</a>
 - 刘毓文：课件文件一《高通量功能基因组实验与复杂疾病研究》：<a href="../slides/2026-06-23-liu-yuwen-01-functional-genomics.pdf">下载</a>
 
 ## 6月24日 星期三
