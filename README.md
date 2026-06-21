@@ -19,23 +19,22 @@
 - `content/docs/course/`：课程概览、学术内容、组织架构与授课团队。
 - `content/docs/schedule/`：五天课程安排。
 - `content/docs/practice/`：上机练习说明，包括连接无线网络和进入个人上机环境。
-- `content/docs/slides.md`：课件下载入口页。
+- `content/docs/slides.md`：课件下载入口页，只维护课件标题和固定下载文件名；课件PDF不放入本仓库。
 - `content/docs/life/`：食宿与后勤，包括签到、住宿、吃饭、车辆、上网、饮水和发票。
 - `content/docs/ngb/`：国家基因库指南。
 - `data/course_students_urls.xlsx`：学员上机入口数据源，包含学员、Linux文件夹和Jupyter专属链接。
 - `content/categories/`、`content/tags/`：分类和标签入口页。
-- `static/slides/`：课件文件固定存放位置。替换这里的同名文件后，Hugo会复制到 `public/slides/`。
 - `scripts/generate_student_redirects.py`：GitHub Actions根据 `data/course_students_urls.xlsx` 生成英文入口跳转页。
 - `layouts/`：Hugo模板覆盖，用于中文页脚、分类页和标签页。
 - `public/`：自动生成的HTML文件。
 
 ## 如何更新网站
 
-1. 修改 `content/` 下的Markdown文件；如果更新课件，请替换 `static/slides/` 下的同名文件；如果更新学员上机入口，请替换 `data/course_students_urls.xlsx`。
+1. 修改 `content/` 下的Markdown文件；如果更新学员上机入口，请替换 `data/course_students_urls.xlsx`；如果更新课件，请只在 `content/docs/slides.md` 中维护课件标题和下载文件名。
 2. 本地提交并推送：
 
 ```bash
-git add content data scripts static README.md hugo.yaml layouts .github/workflows/build-html.yml
+git add content data scripts README.md hugo.yaml layouts .github/workflows/build-html.yml
 git commit -m "更新课程网站内容"
 git push
 ```
@@ -44,6 +43,33 @@ git push
 4. 如果看到提交信息 `Build Hugo HTML [skip ci]`，说明HTML已经由自动流程生成。
 
 不要直接修改 `public/` 目录中的HTML文件。`public/` 是自动生成结果，下一次构建时会被覆盖。需要改内容时，请修改Markdown源文件。
+
+## 课件文件维护
+
+课件PDF文件较大，不提交到GitHub，也不在本仓库保存PDF文件。网页中的下载链接会指向生成网站里的 `public/slides/` 目录；课件还没有放到服务器时，下载链接暂时打不开是正常状态。
+
+维护课件时按以下流程操作：
+
+1. 在 `content/docs/slides.md` 中确认课件标题和下载文件名。
+2. 推送Markdown更新，等待GitHub Actions生成新的 `public/`。
+3. 将生成后的网站内容发布到网站服务器。
+4. 在网站服务器端创建或保留 `public/slides/` 目录，把课件PDF按下面的固定文件名放进去。
+5. 后续更新课件时，直接在服务器端替换同名PDF；如果只是替换课件文件，不需要重新构建Hugo。
+
+发布网站内容到服务器时，请保留服务器端已有的 `public/slides/` 目录和其中的PDF文件。同步HTML文件时不要把服务器端课件目录删除。
+
+当前课件下载文件名：
+
+- `2026-06-22-dong-rui-02-gwas-overview.pdf`
+- `2026-06-23-wang-gao-01-gwas-methods.pdf`
+- `2026-06-23-wang-gao-02-finemapping-multi-trait-datasets.pdf`
+- `2026-06-23-liu-yuwen-01-functional-genomics.pdf`
+- `2026-06-24-li-yang-01-genomics-qc.pdf`
+- `2026-06-24-li-yang-02-qtl-disease-genomics.pdf`
+- `2026-06-25-yang-jingjing-01-twas-pwas.pdf`
+- `2026-06-25-yang-jingjing-02-colocalization-causal-inference.pdf`
+- `2026-06-26-liu-xuanyao-01-prs-cross-ancestry.pdf`
+- `2026-06-26-liu-xuanyao-02-proteomics-trans-regulation.pdf`
 
 ## 上机入口维护
 
