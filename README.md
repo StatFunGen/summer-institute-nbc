@@ -20,7 +20,7 @@
 - `content/docs/schedule/`：五天课程安排。
 - `content/docs/practice/`：上机练习说明，包括连接无线网络和进入个人上机环境。
 - `content/docs/slides.md`：课件下载入口页，只维护课件标题和固定下载文件名；课件PDF不放入本仓库。
-- `content/docs/life/`：食宿与后勤，包括签到、住宿、吃饭、车辆、上网、饮水和发票。
+- `content/docs/life/`：食宿与后勤，包括签到、住宿、吃饭、车辆、上网、饮水、视频会议和发票。
 - `content/docs/ngb/`：国家基因库指南。
 - `data/course_students_urls.xlsx`：学员上机入口数据源，包含学员、Linux文件夹和Jupyter专属链接。
 - `content/categories/`、`content/tags/`：分类和标签入口页。
