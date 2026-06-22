@@ -1,5 +1,7 @@
 .DS_Store
 .hugo_build.lock
 resources/_gen/
-static/slides/
-public/slides/
+static/slides/*
+!static/slides/.keep
+public/slides/*
+!public/slides/.keep
