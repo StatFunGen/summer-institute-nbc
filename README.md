@@ -62,13 +62,14 @@ git push
 当前课件下载文件名：
 
 - `2026-06-22-dong-rui-02-gwas-overview.pdf`
-- `2026-06-23-wang-gao-01-gwas-methods.pdf`
-- `2026-06-23-wang-gao-02-finemapping-multi-trait-datasets.pdf`
+- `2026-06-23-wang-gao-01-gwas-methods-02-fine-mapping-integration.pdf`
 - `2026-06-23-liu-yuwen-01-functional-genomics.pdf`
 - `2026-06-24-li-yang-01-genomics-qc.pdf`
 - `2026-06-24-li-yang-02-qtl-disease-genomics.pdf`
-- `2026-06-25-yang-jingjing-01-twas-pwas.pdf`
-- `2026-06-25-yang-jingjing-02-colocalization-causal-inference.pdf`
+- `2026-06-25-yang-jingjing-01-introduce-twas.pdf`
+- `2026-06-25-yang-jingjing-02-otters-gift.pdf`
+- `2026-06-25-yang-jingjing-03-twas-mr.pdf`
+- `2026-06-25-yang-jingjing-04-application-to-ad.pdf`
 - `2026-06-26-liu-xuanyao-01-prs-cross-ancestry.pdf`
 - `2026-06-26-liu-xuanyao-02-proteomics-trans-regulation.pdf`
 

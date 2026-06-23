@@ -34,8 +34,10 @@ tags:
 
 ## 6月25日 星期四
 
-- 杨晶晶：课件文件一《转录组关联分析（TWAS）与蛋白质组关联分析（PWAS）》：<a href="../slides/2026-06-25-yang-jingjing-01-twas-pwas.pdf">下载</a>
-- 杨晶晶：课件文件二《共定位、因果推断与阿尔茨海默病应用》：<a href="../slides/2026-06-25-yang-jingjing-02-colocalization-causal-inference.pdf">下载</a>
+- 杨晶晶：课件文件一《转录组关联分析（TWAS）导论》：<a href="../slides/2026-06-25-yang-jingjing-01-introduce-twas.pdf">下载</a>
+- 杨晶晶：课件文件二《OTTERS 与 GIFT 方法》：<a href="../slides/2026-06-25-yang-jingjing-02-otters-gift.pdf">下载</a>
+- 杨晶晶：课件文件三《TWAS 与孟德尔随机化（MR）》：<a href="../slides/2026-06-25-yang-jingjing-03-twas-mr.pdf">下载</a>
+- 杨晶晶：课件文件四《阿尔茨海默病（AD）应用案例》：<a href="../slides/2026-06-25-yang-jingjing-04-application-to-ad.pdf">下载</a>
 
 ## 6月26日 星期五
 
