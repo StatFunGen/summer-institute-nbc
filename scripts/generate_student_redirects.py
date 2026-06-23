@@ -259,7 +259,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Generate JupyterLab redirect HTML files.")
     parser.add_argument("--input", default="data/course_students_urls.xlsx", help="student URL workbook")
     parser.add_argument("--output", default="public", help="Hugo output directory")
-    parser.add_argument("--sheet", default="course_urls_fixed", help="worksheet name")
+    parser.add_argument("--sheet", default=None, help="worksheet name; defaults to the first worksheet")
     args = parser.parse_args()
 
     input_path = Path(args.input)
