@@ -41,5 +41,5 @@ tags:
 
 ## 6月26日 星期五
 
-- 刘轩尧：课件文件一《多基因风险评分（PRS）与跨族群遗传发现》：<a href="../slides/2026-06-26-liu-xuanyao-01-prs-cross-ancestry.pdf">下载</a>
-- 刘轩尧：课件文件二《蛋白质组、反式调控与全基因模型》：<a href="../slides/2026-06-26-liu-xuanyao-02-proteomics-trans-regulation.pdf">下载</a>
+- 刘轩尧：课件文件一《多基因风险评分（PRS）与跨族群遗传发现》：<a href="../slides/2026-06-26-liu-xuanyao-01-prs-cross-ancestry-02-proteomics-trans-regulation.pdf">下载</a>
+- 刘轩尧：课件文件二《蛋白质组、反式调控与全基因模型》：已合并至上面课件
